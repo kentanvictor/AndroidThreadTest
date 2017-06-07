@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidThreadTest</string>
+    <string name="but1">Change Text</string>
+    <string name="Text1">Heelo World</string>
+</resources>
