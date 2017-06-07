@@ -9,10 +9,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    public static final int UPDATE_TEXT = 1;
+    public static final int UPDATE_TEXT = 1;//定義一個整型常量，用於表示更新TextView的這個動作
     private TextView text;
 
     private Handler handler = new Handler()
+        //這裡新增Handler這個對象，并重寫父類的handleMessage()方法
     {
         public void handleMessage(Message msg)
         {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Message message = new Message();
+                        Message message = new Message();//創建Message(Android.os.Message)對象
                         message.what = UPDATE_TEXT;
                         handler.sendMessage(message);//將Message對象發出去
                       /*text.setText("Nice to meet you");
